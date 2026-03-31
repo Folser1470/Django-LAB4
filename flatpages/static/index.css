@@ -1,0 +1,49 @@
+body {
+    background: #4caa33;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок первого уровня с засечками */
+h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;  /* таблица на всю ширину */
+}
+
+p, h4 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+/* Размер шрифта для подзаголовков четвертого уровня */
+h4 {
+    font-size: 16px;  /* изменен размер */
+}
+
+ul, ol {
+    margin: 0;
+}
+
+table tr td {
+    padding: 5px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.header img {
+    height: 200px;
+    width: 200px;
+}
+
+table {
+    width: 100%;
+}

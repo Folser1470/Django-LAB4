@@ -1,0 +1,32 @@
+<!-- articles/templates/archive.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'article.css' %}">
+    <title>Архив статей</title>
+</head>
+<body class="archive">
+    <div class="header">
+        <img src="https://i.pinimg.com/736x/95/c1/ee/95c1ee5f19bd62cae70e39b4e0a69a07.jpg" alt="dog">
+        <h1>Архив статей</h1>
+    </div>
+
+    <div class="archive">
+        {% for post in posts %}
+        <div class="one-post">
+            <h2 class="post-title">
+                <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
+            </h2>
+
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date|date:"d.m.Y" }}</div>
+            </div>
+
+            <p class="article-text">{{ post.get_excerpt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

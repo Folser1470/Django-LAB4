@@ -1,0 +1,30 @@
+<!-- articles/templates/article.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'article.css' %}">
+    <title>{{ post.title }} - Блог</title>
+</head>
+<body class="article">
+    <div class="header">
+        <img src="https://i.pinimg.com/736x/95/c1/ee/95c1ee5f19bd62cae70e39b4e0a69a07.jpg" alt="logo">
+        <h1>{{ post.title }}</h1>
+    </div>
+
+    <div class="article-content">
+        <div class="back-link">
+            <a href="{% url 'articles' %}">← Все записи</a>
+        </div>
+
+        <div class="article-info">
+            <div class="article-author">{{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date|date:"d.m.Y" }}</div>
+        </div>
+
+        <div class="article-text">
+            {{ post.text|linebreaks }}
+        </div>
+    </div>
+</body>
+</html>
